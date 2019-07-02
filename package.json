@@ -1,0 +1,29 @@
+{
+  "name": "my-music",
+  "version": "1.0.0",
+  "description": "enjoy my music",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiveLucky/my-music.git"
+  },
+  "keywords": [
+    "music"
+  ],
+  "author": "five",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fiveLucky/my-music/issues"
+  },
+  "homepage": "https://github.com/fiveLucky/my-music#readme",
+  "devDependencies": {
+    "electron": "^5.0.6",
+    "mini-css-extract-plugin": "^0.7.0",
+    "path": "^0.12.7",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  }
+}
