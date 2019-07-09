@@ -1,56 +1,40 @@
-
-
 // base
 @navColor: rgb(107, 195, 162);
 @primaryColor: #1890ff;
 @nvBgColor: #001529;
 
-.base{
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.base {
   width: 100%;
   min-height: 100vh;
   height: 100%;
 }
 
-.container{
+.container {
   .base;
-  background: #f0f2f5
-}
-// header
-.avatar{
-  float: right;
-  margin-right: 50px;
-}
+  background: #f0f2f5;
 
-// menu
-.menuContainer{
-  float: left;
-  .sider{
-    .base;
-    .link{
-      display: inline;
-    }
-    .logoArea{
-      height: 64px;
-      background: @nvBgColor;
-      color: @primaryColor;
-      font-size: 34px;
-      text-align: center;
-      border-bottom: 1px dashed @primaryColor;
-      .logoIcon{
-        padding-top: 15px;
-      }
-    }
+  .top {
+    height: 50px;
+    background: #dc5d51;
+    width: 100%;
   }
-}
 
-// content
+  .left {
+    float: left;
+    width: 200px;
+    background: #EDEDED;
+    height: calc(~"100vh - 50px");
+  }
 
-.contentContainer{
-  height: calc(~ "100vh - 112px");
-  .contentBody{
-    height: 100%;
-    background: #FFF;
-    margin: 24px;
-    padding:24px;
+  .content {
+    margin-left: 200px;
+    width: calc(~"100vw - 200px");
+    height: calc(~"100vh - 50px");
+    background: #FFFFFF;
   }
 }

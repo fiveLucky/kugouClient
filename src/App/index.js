@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Layout } from 'antd';
 
 import Menu from './Menu';
 import Header from './Header';
@@ -11,13 +10,15 @@ export default class Index extends Component {
 	render() {
 		return (
 			<div className={styles.container}>
-				<Layout>
+				<div className={styles.top}>
+					<Header />
+				</div>
+				<div className={styles.left}>
 					<Menu />
-					<Layout>
-						<Header />
-						<Content>{this.props.children}</Content>
-					</Layout>
-				</Layout>
+				</div>
+				<div className={styles.content}>
+					<Content />
+				</div>
 			</div>
 		);
 	}

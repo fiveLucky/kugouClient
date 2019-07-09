@@ -1,44 +1,66 @@
 import { observable, action } from 'mobx';
 
-const menuTree = [
-  {
-    navName: '首页',
-    path: '/web',
-    children: [],
+const menuTree = {
+  main: {
+    label: '',
+    menus: [
+      {
+        label: '发现音乐',
+        icon: '',
+        value: 'findMusic',
+        path: '/findMusic'
+      },
+      {
+        label: '私人FM',
+        icon: '',
+        value: 'privateFM',
+        path: '/privateFM',
+      },
+      {
+        label: '视频',
+        icon: '',
+        value: 'video',
+        path: '/video',
+      },
+      {
+        label: '朋友',
+        icon: '',
+        value: 'friend',
+        path: '/friend',
+      },
+    ]
   },
-  {
-    navName: '示例1',
-    path: '/web/Demo',
-    children: [
+  myMusic: {
+    label: '我的音乐',
+    menus: [
       {
-        navName: '列表',
-        path: '/web/Demo',
-        children: [],
+        label: 'iTunes',
+        icon: '',
+        value: 'iTunes',
+        path: '/iTunes',
       },
       {
-        navName: '详情',
-        path: '/web/Demo/Detail',
-        children: [],
-      },
-    ],
-  },
-  {
-    navName: '示例2',
-    path: '/Demo2',
-    children: [
-      {
-        navName: '列表',
-        path: '/Demo2/List',
-        children: [],
+        label: '下载管理',
+        icon: '',
+        value: 'download',
+        path: '/download',
       },
       {
-        navName: '详情',
-        path: '/Demo2/Detail',
-        children: [],
+        label: '我的音乐云盘',
+        icon: '',
+        value: 'cloud',
+        path: '/cloud',
       },
-    ],
-  },
-];
+      {
+        label: '我的收藏',
+        icon: '',
+        value: 'collection',
+        path: '/collection',
+      },
+    ]
+  }
+
+};
 
 class Store {
 
