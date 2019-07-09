@@ -8,7 +8,7 @@ const menuTree = {
         label: '发现音乐',
         icon: '',
         value: 'findMusic',
-        path: '/findMusic'
+        path: '/findMusic',
       },
       {
         label: '私人FM',
@@ -28,7 +28,7 @@ const menuTree = {
         value: 'friend',
         path: '/friend',
       },
-    ]
+    ],
   },
   myMusic: {
     label: '我的音乐',
@@ -57,14 +57,14 @@ const menuTree = {
         value: 'collection',
         path: '/collection',
       },
-    ]
-  }
+    ],
+  },
 
 };
 
 class Store {
-
   @observable collapsed = false;
+
   @observable menuTree = [];
 
 
@@ -72,6 +72,7 @@ class Store {
   setStore(value = {}) {
     Object.assign(this, value);
   }
+
   onCollapse = (collapsed) => {
     this.setStore({ collapsed });
   }
@@ -81,7 +82,6 @@ class Store {
       this.setStore({ menuTree });
     }, 500);
   }
-
 }
 
 export default new Store();

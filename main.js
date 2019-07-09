@@ -13,15 +13,15 @@ function createWindow() {
     width: 1366,
     height: 768,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
     },
     // frame: false
-    titleBarStyle: 'hidden'
+    titleBarStyle: 'hidden',
   });
 
   // 加载index.html文件
   if (process.env.NODE_ENV === 'production') {
-    win.loadFile(path.resolve(__dirname + '/dist/index.html'));
+    win.loadFile(path.resolve(`${__dirname}/dist/index.html`));
   } else {
     win.loadURL(`http://localhost:${userConfig.devServer.port}/web`);
   }

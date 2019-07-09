@@ -4,15 +4,14 @@ import styles from '../index.less';
 
 
 export default class Content extends Component {
-
-	render() {
-		return (
+  render() {
+    const { children } = this.props;
+    return (
 			<div className={styles.contentContainer}>
 				<div className={styles.contentBody} id="app-content-root">
-					{this.props.children}
+					{children}
 				</div>
 			</div>
-		);
-	}
+    );
+  }
 }
-
