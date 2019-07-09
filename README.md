@@ -1,6 +1,6 @@
-# react-demo
+# my-music
 
-这是一个demo
+我的音乐软件
 #### 简介  
 
 >涉及的技术栈：react16.6+webpack4+mobx5+react-router4+babel7+antd3+less2  

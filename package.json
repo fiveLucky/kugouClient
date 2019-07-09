@@ -1,13 +1,14 @@
 {
-  "name": "demo",
+  "name": "my-music",
   "version": "1.0.0",
   "description": "study",
-  "main": "src/index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode=development --config=Config/webpack/dev.js --progress --color",
     "start-dashboard": "NODE_ENV=development webpack-dashboard -- node ./Config/server",
     "start": "NODE_ENV=development node ./Config/server",
+    "sc": "electron .",
     "sn": "yarn run start",
     "sd": "yarn run start-dashboard",
     "build": "NODE_ENV=production webpack --config=Config/webpack/prod.js --progress",
@@ -16,17 +17,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SkyblueWZZQ/Demo.git"
+    "url": "git+https://github.com/fiveLucky/my-music.git"
   },
   "keywords": [
-    "demo"
+    "my-music"
   ],
   "author": "Kyrie Ving",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SkyblueWZZQ/Demo/issues"
+    "url": "https://github.com/fiveLucky/my-music/issues"
   },
-  "homepage": "https://github.com/SkyblueWZZQ/Demo#readme",
+  "homepage": "https://github.com/fiveLucky/my-music#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.54",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
