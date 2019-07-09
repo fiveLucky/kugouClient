@@ -1,0 +1,56 @@
+
+
+// base
+@navColor: rgb(107, 195, 162);
+@primaryColor: #1890ff;
+@nvBgColor: #001529;
+
+.base{
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.container{
+  .base;
+  background: #f0f2f5
+}
+// header
+.avatar{
+  float: right;
+  margin-right: 50px;
+}
+
+// menu
+.menuContainer{
+  float: left;
+  .sider{
+    .base;
+    .link{
+      display: inline;
+    }
+    .logoArea{
+      height: 64px;
+      background: @nvBgColor;
+      color: @primaryColor;
+      font-size: 34px;
+      text-align: center;
+      border-bottom: 1px dashed @primaryColor;
+      .logoIcon{
+        padding-top: 15px;
+      }
+    }
+  }
+}
+
+// content
+
+.contentContainer{
+  height: calc(~ "100vh - 112px");
+  .contentBody{
+    height: 100%;
+    background: #FFF;
+    margin: 24px;
+    padding:24px;
+  }
+}
