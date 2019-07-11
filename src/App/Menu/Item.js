@@ -23,3 +23,20 @@ export default function Item(props) {
     </Link>
   );
 }
+
+
+function Collapse(props) {
+  const { label, expand = true, children } = props;
+  return (
+    <div className={styles.categoryBlock}>
+      <div className={styles.category}>
+        <Icon name={expand ? '' : 'sss'} />
+        <span>{label}</span>
+      </div>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+
+Item.Collapse = Collapse;

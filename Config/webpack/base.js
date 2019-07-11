@@ -104,6 +104,10 @@ const config = {
         use: cssLoader(),
         exclude: /node_modules/,
       },
+      {
+        test: /.(png|gif|gpe?g|ttf)$/,
+        use: 'file-loader',
+      },
     ],
   },
   plugins: [

@@ -6,6 +6,7 @@ import Item from './Item';
 import store from '../store';
 import styles from './index.less';
 
+const { Collapse } = Item;
 
 @withRouter
 @observer
@@ -22,11 +23,9 @@ export default class Menu extends Component {
 	  const { menuTree, activedMenuKey } = store;
 	  return (
 			<div className={styles.container}>
-				<div className={styles.logoArea} />
 				{
 					Object.keys(menuTree).map(category => (
-						<div key={category}>
-							<div>{menuTree[category].label}</div>
+						<Collapse key={category} label={menuTree[category].label}>
 							{
 								menuTree[category].menus.map(item => (
 									<Item
@@ -37,7 +36,7 @@ export default class Menu extends Component {
 									/>
 								))
 							}
-						</div>
+						</Collapse>
 					))
 				}
 			</div>

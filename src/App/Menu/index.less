@@ -1,5 +1,6 @@
 @import (less) '/index';
 
+@s: @size * 2;
 
 .active {
   span {
@@ -9,22 +10,33 @@
   background: #E2E2E2;
 }
 
+.container {
+  .categoryBlock {
+    margin-bottom: 20px;
+    padding: 0 @s;
 
-.itemContainer {
-  height: 36px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding: 0 20px;
-  cursor: pointer;
+    .category {
+      font-size: 12px;
+      color: @gray;
+    }
 
-  &:hover:extend(.active) {}
+  }
 
-  .unread {
-    width: 0;
-    height: 0;
-    border: 3px solid #C3463A;
-    border-radius: 3px;
-    margin-left: 6px;
+  .itemContainer {
+    height: 36px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover:extend(.active) {}
+
+    .unread {
+      width: 0;
+      height: 0;
+      border: 3px solid @deep-color;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
   }
 }
