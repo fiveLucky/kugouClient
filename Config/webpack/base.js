@@ -6,24 +6,23 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { spliceRootPath, spliceDirPath } = require('../util');
 const { outputPath, publicPath } = require('../../project.config.js').output;
 
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production';
 
 
-
-const cssLoader = function (modules = true) {
+function cssLoader(modules = true) {
   return [
     isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-    modules ?
-      {
+    modules
+      ? {
         loader: 'css-loader',
         options: {
           modules,
-          localIdentName: '[name]_[local]-[hash:base64:5]'
-        }
+          localIdentName: '[name]_[local]-[hash:base64:5]',
+        },
       } : 'css-loader',
     'postcss-loader',
   ];
-};
+}
 
 const config = {
   entry: {
@@ -40,7 +39,7 @@ const config = {
       'rc-tooltip',
       'rc-select',
       'rc-table',
-    ]
+    ],
   },
   output: {
     path: spliceRootPath(outputPath),
@@ -61,65 +60,76 @@ const config = {
               // 标记未被引用的代码，通过 terser-webpack-plugin 在optimize的时候去除死代码
               // 这里未看到效果
               presets: [
-                ['@babel/preset-env', { modules: false }]
-              ]
-            }
+                ['@babel/preset-env', { modules: false }],
+              ],
+            },
           },
-          spliceDirPath(__dirname, 'lazyLoader.js')
-        ]
+          spliceDirPath(__dirname, 'lazyLoader.js'),
+        ],
       },
       {
         test: /\.html$/,
         loader: 'html-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.less$/,
         use: [
           ...cssLoader(),
-          "less-loader",
+          {
+            loader: 'less-loader',
+            options: {
+              paths: [spliceDirPath(__dirname, '../../src/style/common')],
+            },
+          },
         ],
         exclude: /src\/style/,
-        include: /src/
+        include: /src/,
       },
       {
         test: /\.less$/,
         use: [
           ...cssLoader(false),
-          "less-loader",
+          {
+            loader: 'less-loader',
+            // options: {
+            //   paths: [spliceDirPath(__dirname, '../../src/style')],
+            // },
+          },
         ],
         include: /style/,
       },
       {
         test: /\.css$/,
         use: cssLoader(),
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'template/index.html'
+      template: 'template/index.html',
     }),
     new ScriptAttributesInjectPlugin({
       include: 'head',
       attrs: {
-        src: 'asdfasfasdfasfsdfdssdfdsf'
-      }
+        src: 'asdfasfasdfasfsdfdssdfdsf',
+      },
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
   resolve: {
     alias: {
-      '$component': spliceRootPath('src/component'),
-      '$config': spliceRootPath('src/config'),
-      '$util': spliceRootPath('src/util'),
-    }
-  }
+      $component: spliceRootPath('src/component'),
+      $config: spliceRootPath('src/config'),
+      $util: spliceRootPath('src/util'),
+      $style: spliceRootPath('src/style'),
+    },
+  },
 };
 
 
