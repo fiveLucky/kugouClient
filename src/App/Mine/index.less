@@ -1,9 +1,28 @@
+@import (less)'/index';
+
+@s: @size * 4;
+
 .container {
-  width: 100%;
+  // width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: @size;
 
   .avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
+    float: left;
+    width: @s;
+    height: @s;
+    border-radius: @size * 2;
+    background: #ab67eb;
+    line-height: @s;
+    text-align: center;
+    color: @white;
+  }
+
+  .name {
+    float: left;
+    font-size: 14px;
+    margin-left: 20px;
   }
 }

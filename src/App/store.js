@@ -63,7 +63,7 @@ const menuTree = {
 };
 
 class Store {
-  @observable collapsed = false;
+  @observable activedMenuKey = null;
 
   @observable menuTree = [];
 
@@ -81,6 +81,11 @@ class Store {
     setTimeout(() => {
       this.setStore({ menuTree });
     }, 500);
+  }
+
+  @action.bound
+  setState(value = {}) {
+    Object.assign(this, value);
   }
 }
 

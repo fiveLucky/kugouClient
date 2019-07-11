@@ -12,4 +12,3 @@ if (process.env.NODE_ENV === 'development' && userConfig.devServer.hot && module
 }
 
 ReactDOM.render(<Router />, document.getElementById('app'));
-

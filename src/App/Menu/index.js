@@ -14,15 +14,15 @@ export default class Menu extends Component {
     store.fetchMenuTree();
   }
 
-	onClickMenu = () => { }
+	onClickMenu = (data) => {
+	  store.setState({ activedMenuKey: data.value });
+	}
 
 	render() {
-	  const { menuTree } = store;
+	  const { menuTree, activedMenuKey } = store;
 	  return (
 			<div className={styles.container}>
-				<div className={styles.logoArea}>
-					{/* <Icon type="github" className={styles.logoIcon} /> */}
-				</div>
+				<div className={styles.logoArea} />
 				{
 					Object.keys(menuTree).map(category => (
 						<div key={category}>
@@ -32,7 +32,8 @@ export default class Menu extends Component {
 									<Item
 										{...item}
 										key={item.value}
-										onClick={() => this.onClickMenu}
+										className={activedMenuKey === item.value ? styles.active : null}
+										onClick={() => this.onClickMenu(item)}
 									/>
 								))
 							}
