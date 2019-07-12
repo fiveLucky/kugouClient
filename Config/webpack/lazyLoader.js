@@ -1,13 +1,11 @@
 
 const reg = /.*lazy\(('(.*)')\).*/;
-const temp = (chunkName) => {
-  return `() => import(/* webpackChunkName: "${chunkName}" */ '${chunkName}')`;
-};
+const temp = chunkName => `() => import(/* webpackChunkName: "${chunkName}" */ '${chunkName}')`;
 
 module.exports = (source) => {
   try {
-    const r = source.split('\n').map(line => {
-      //eg: const List = lazy('./View/Demo/List');
+    const r = source.split('\n').map((line) => {
+      // eg: const List = lazy('./View/Demo/List');
       const matchArr = line.match(reg);
 
       if (matchArr !== null) {

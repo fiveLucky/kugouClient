@@ -6,7 +6,7 @@ import styles from './index.less';
 
 export default class Index extends Component {
   render() {
-    const { name = '陈独秀' } = this.props;
+    const { name = '卢本伟' } = this.props;
     return (
       <div className={styles.container}>
         <div className={styles.avatar}>花</div>

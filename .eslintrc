@@ -43,5 +43,6 @@
         "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
         "react/jsx-indent-props": 0,
         "import/no-extraneous-dependencies": 0,
+        "class-methods-use-this": 0
     }
 }
