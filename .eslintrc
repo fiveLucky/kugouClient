@@ -45,5 +45,8 @@
         "import/no-extraneous-dependencies": 0,
         "class-methods-use-this": 0,
         "react/jsx-one-expression-per-line": 0,
+        "react/require-default-props": 1,
+        "no-debugger": "off",
+        "react/prop-types": "warn"
     }
 }

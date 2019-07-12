@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Icon from '$component/Icon';
 import styles from './index.less';
@@ -24,9 +25,27 @@ export default function Item(props) {
   );
 }
 
+Item.propTypes = {
+  onClick: PropTypes.func,
+  icon: PropTypes.string,
+  className: PropTypes.string,
+  path: PropTypes.string,
+  label: PropTypes.string,
+  unread: PropTypes.bool,
+};
+
+Item.defaultProps = {
+  onClick: () => { },
+  icon: '',
+  className: '',
+  path: '',
+  label: '',
+  unread: false,
+};
+
 
 function Collapse(props) {
-  const [expand, setExpand] = useState({ expand: true });
+  const [expand, setExpand] = useState(true);
   const { label, children, collapsable } = props;
   const click = () => setExpand(preExpand => !preExpand);
 
@@ -53,6 +72,16 @@ function Collapse(props) {
     </div>
   );
 }
+Collapse.propTypes = {
+  children: PropTypes.node,
+  label: PropTypes.string,
+  collapsable: PropTypes.bool,
+};
+
+Collapse.defaultProps = {
+  label: '',
+  collapsable: false,
+};
 
 
 Item.Collapse = Collapse;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Menu from './Menu';
 import Mine from './Mine';
@@ -7,7 +8,8 @@ import Content from './Content';
 
 import styles from './index.less';
 
-export default class Index extends Component {
+@withRouter
+class Index extends Component {
   render() {
     return (
 			<div className={styles.container}>
@@ -25,3 +27,5 @@ export default class Index extends Component {
     );
   }
 }
+
+export default Index;

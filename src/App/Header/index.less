@@ -1,1 +1,37 @@
-.container {}
+@import (less) '/index';
+
+.container {
+  @height: 100%;
+
+  .history {
+    width: 200px;
+    float: left;
+    height: 50px;
+  }
+
+  .subMenu {
+    float: left;
+    line-height: 50px;
+
+
+    .item {
+      margin-left: 26px;
+      color: @deep-white;
+      font-size: 15px;
+
+      &:hover {
+        .active()
+      }
+    }
+  }
+
+
+  .active {
+    color: @white  !important;
+  }
+
+  .fixedContent {
+    float: right;
+    color: @deep-white;
+  }
+}

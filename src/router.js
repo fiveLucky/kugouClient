@@ -6,8 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './App';
 import './style/index.less';
 
-const DemoList = lazy('./views/Demo');
-const Home = lazy('./views/Home');
+const FindMusic = lazy('./views/FindMusic');
 
 export default class Router extends Component {
   render() {
@@ -16,8 +15,8 @@ export default class Router extends Component {
         <App>
           <Suspense fallback="loading">
             <Switch>
-              <Route exact path="/web" component={Home} />
-              <Route path="/web/Demo" component={DemoList} />
+              <Route exact path="/web" component={FindMusic} />
+              <Route path="/web/FindMusic" component={FindMusic} />
             </Switch>
           </Suspense>
         </App>

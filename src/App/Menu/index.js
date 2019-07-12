@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import { observer } from 'mobx-react';
 
 import Item from './Item';
@@ -10,15 +9,14 @@ const { Collapse } = Item;
 
 const NO_COLLAPSE = ['default', 'mine-music'];
 
-@withRouter
 @observer
-export default class Menu extends Component {
+class Menu extends Component {
   componentDidMount() {
     store.fetchMenuTree();
   }
 
 	onClickMenu = (data) => {
-	  store.setState({ activedMenuKey: data.value });
+	  store.setStore({ activedMenuKey: data.path });
 	}
 
 	render() {
@@ -37,7 +35,7 @@ export default class Menu extends Component {
 									<Item
 										{...item}
 										key={item.value}
-										className={activedMenuKey === item.value ? styles.active : null}
+										className={activedMenuKey === item.path ? styles.active : null}
 										onClick={() => this.onClickMenu(item)}
 									/>
 								))
@@ -49,3 +47,5 @@ export default class Menu extends Component {
 	  );
 	}
 }
+
+export default Menu;
