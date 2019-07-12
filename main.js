@@ -10,8 +10,8 @@ let win = null;
 function createWindow() {
   // 创建浏览器窗口。
   win = new BrowserWindow({
-    width: 1366,
-    height: 768,
+    width: 1000,
+    height: 600,
     webPreferences: {
       nodeIntegration: true,
       webSecurity: false,
