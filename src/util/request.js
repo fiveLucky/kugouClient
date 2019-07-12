@@ -1,7 +1,7 @@
 
 /**
  * 一个请求方法需要做哪些事情？
- * 
+ *
  * 1、get请求防止缓存
  * 2、解析响应值
  * 3、处理错误
@@ -29,7 +29,6 @@ const getUri = (uri, param) => (`${uri}${/\?/.test(uri) ? '&' : '?'}${param}`);
 
 
 class Request {
-
   get(uri, param) {
     const options = {
       ...getOptions(param),
@@ -37,14 +36,12 @@ class Request {
     };
 
     fetch(getUri(uri), options)
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           response.text().then();
         }
       });
-
   }
-
 }
 
 
