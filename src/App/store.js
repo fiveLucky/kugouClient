@@ -2,7 +2,7 @@ import { observable, action, computed } from 'mobx';
 import menuTree from './model';
 
 class Store {
-  @observable activedMenuKey = '';
+  @observable activedMenuKey = window.location.pathname;
 
   @observable menuTree = [];
 

@@ -1,6 +1,7 @@
 
 import React, { Suspense, lazy, Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 
 import App from './App';
@@ -15,8 +16,8 @@ export default class Router extends Component {
         <App>
           <Suspense fallback="loading">
             <Switch>
-              <Route exact path="/web" component={FindMusic} />
-              <Route path="/web/FindMusic" component={FindMusic} />
+              <Route exact path="/web" render={() => <Redirect to="/web/FindMusic" />} />
+              {/* <Route path="/web/FindMusic" component={FindMusic} /> */}
             </Switch>
           </Suspense>
         </App>

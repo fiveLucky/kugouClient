@@ -22,6 +22,7 @@ class Header extends Component {
             subMenus.map(menu => (
               <Item
                 {...menu}
+                key={menu.path}
                 active={location.pathname === menu.path}
               />
             ))
