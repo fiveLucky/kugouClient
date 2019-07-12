@@ -1,10 +1,12 @@
 const Koa = require('koa');
 const koaWebpack = require('koa-webpack');
 const path = require('path');
-const execSync = require('child_process').execSync;
+const childProcess = require('child_process');
 const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
+
+const { execSync } = childProcess;
 
 const webpackDevConfig = require('../webpack/dev');
 const userConfig = require('../../project.config.js').devServer;
@@ -16,9 +18,9 @@ compiler.apply(new DashboardPlugin());
 koaWebpack({
   compiler,
   hotClient: userConfig.hot && {},
-}).then(middleware => {
+}).then((middleware) => {
   app.use(middleware);
-  app.use(async ctx => {
+  app.use(async (ctx) => {
     const filename = path.resolve(webpackDevConfig.output.path, 'index.html');
     ctx.response.type = 'html';
     ctx.response.body = middleware.devMiddleware.fileSystem.createReadStream(filename);

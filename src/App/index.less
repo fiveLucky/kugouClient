@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  user-select: none;
 }
 
 a {
@@ -14,7 +15,9 @@ a {
 
 @font-face {
   font-family: 'my-music';
-  src: url('../../asset/font/iconfont.ttf');
+  src: url('../../asset/font/iconfont.ttf') format('truetype');
+  // src: url('../../asset/font/iconfont.woff') format('woff');
+  // src: url('../../asset/font/iconfont.svg') format('svg');
 }
 
 .base {
@@ -29,7 +32,7 @@ a {
 
   .top {
     height: 50px;
-    background: #dc5d51;
+    background: @primary-color;
     width: 100%;
   }
 

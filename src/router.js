@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 import App from './App';
-import './style';
+import './style/index.less';
 
 const DemoList = lazy('./views/Demo');
 const Home = lazy('./views/Home');

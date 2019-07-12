@@ -79,7 +79,7 @@ const config = {
           {
             loader: 'less-loader',
             options: {
-              paths: [spliceDirPath(__dirname, '../../src/style/common')],
+              paths: [spliceDirPath(__dirname, '../../src/style/base')],
             },
           },
         ],
@@ -105,8 +105,13 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /.(png|gif|gpe?g|ttf)$/,
-        use: 'file-loader',
+        test: /.(png|gif|gpe?g|ttf|woff|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+          },
+        },
       },
     ],
   },

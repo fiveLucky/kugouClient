@@ -3,28 +3,29 @@ import { observable, action } from 'mobx';
 const menuTree = {
   main: {
     label: '',
+    value: 'default',
     menus: [
       {
         label: '发现音乐',
-        icon: '',
+        icon: 'netease',
         value: 'findMusic',
         path: '/findMusic',
       },
       {
         label: '私人FM',
-        icon: '',
+        icon: 'fm',
         value: 'privateFM',
         path: '/privateFM',
       },
       {
         label: '视频',
-        icon: '',
+        icon: 'video',
         value: 'video',
         path: '/video',
       },
       {
         label: '朋友',
-        icon: '',
+        icon: 'friend',
         value: 'friend',
         path: '/friend',
       },
@@ -32,28 +33,29 @@ const menuTree = {
   },
   myMusic: {
     label: '我的音乐',
+    value: 'mine-music',
     menus: [
       {
         label: 'iTunes',
-        icon: '',
+        icon: 'music',
         value: 'iTunes',
         path: '/iTunes',
       },
       {
         label: '下载管理',
-        icon: '',
+        icon: 'download',
         value: 'download',
         path: '/download',
       },
       {
         label: '我的音乐云盘',
-        icon: '',
+        icon: 'cloud',
         value: 'cloud',
         path: '/cloud',
       },
       {
         label: '我的收藏',
-        icon: '',
+        icon: 'collect',
         value: 'collection',
         path: '/collection',
       },

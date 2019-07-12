@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '$component/Icon';
 import styles from './index.less';
@@ -15,7 +15,7 @@ export default function Item(props) {
       to={path}
     >
       <Icon name={icon} />
-      <span>{label}</span>
+      <span className="margin-left-small">{label}</span>
       {
         unread
         && <span className={styles.unread} />
@@ -26,14 +26,30 @@ export default function Item(props) {
 
 
 function Collapse(props) {
-  const { label, expand = true, children } = props;
+  const [expand, setExpand] = useState({ expand: true });
+  const { label, children, collapsable } = props;
+  const click = () => setExpand(preExpand => !preExpand);
+
   return (
     <div className={styles.categoryBlock}>
-      <div className={styles.category}>
-        <Icon name={expand ? '' : 'sss'} />
+      <div
+        className={`${styles.category} ${collapsable ? styles.pointer : ''}`}
+        onClick={collapsable ? click : undefined}
+      >
+        {
+          label
+          && (
+            <div className={styles.icon}>
+              {
+                collapsable
+                && <Icon name={expand ? 'downFill' : 'rightFill'} />
+              }
+            </div>
+          )
+        }
         <span>{label}</span>
       </div>
-      <div>{children}</div>
+      <div>{expand && children}</div>
     </div>
   );
 }

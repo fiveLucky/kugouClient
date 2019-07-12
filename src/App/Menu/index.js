@@ -8,6 +8,8 @@ import styles from './index.less';
 
 const { Collapse } = Item;
 
+const NO_COLLAPSE = ['default', 'mine-music'];
+
 @withRouter
 @observer
 export default class Menu extends Component {
@@ -25,7 +27,11 @@ export default class Menu extends Component {
 			<div className={styles.container}>
 				{
 					Object.keys(menuTree).map(category => (
-						<Collapse key={category} label={menuTree[category].label}>
+						<Collapse
+							key={category}
+							label={menuTree[category].label}
+							collapsable={!NO_COLLAPSE.includes(menuTree[category].value)}
+						>
 							{
 								menuTree[category].menus.map(item => (
 									<Item
