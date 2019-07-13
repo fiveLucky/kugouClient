@@ -50,16 +50,17 @@ const NAME = {
 
 };
 export default function Icon(props) {
-  const { name = 'music' } = props;
+  const { name = 'music', className, onClick = () => { } } = props;
   return (
     NAME[name]
     && (
       /* eslint-disable react/no-danger */
       <span
-        className={styles.icon}
+        className={`${styles.icon} ${className}`}
         dangerouslySetInnerHTML={{
           __html: `&#xe${NAME[name]};`,
         }}
+        onClick={onClick}
       />
     )
   );
