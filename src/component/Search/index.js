@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
 import Icon from '../Icon';
+import Board from './Board';
 import Store from './store';
 import styles from './index.less';
 
@@ -36,6 +37,7 @@ class FixedContent extends Component {
           value
           && <Icon className={styles.clearBtn} name="add" onClick={clear} />
         }
+        <Board visible={focus} />
       </div>
     );
   }

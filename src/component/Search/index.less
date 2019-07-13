@@ -40,3 +40,22 @@
     color: @white;
   }
 }
+
+
+
+.board {
+  position: fixed;
+  width: 360px;
+  // right: -360px;
+  right: 0px;
+  bottom: 0;
+  background: @white;
+  height: calc(~"100vh - 50px");
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all .1s;
+}
+
+.show {
+  right: 0;
+  bottom: 0;
+}
