@@ -1,8 +1,10 @@
 import { observable, action, computed } from 'mobx';
+import history from '$config/history';
 import menuTree from './model';
 
+
 class Store {
-  @observable activedMenuKey = window.location.pathname.replace('/web', '');
+  @observable activedMenuKey = history.location.pathname;
 
   @observable menuTree = [];
 

@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Icon from '$component/Icon';
 import styles from './index.less';
 import Item from './Item';
+import FixedContent from './FixedContent';
 
 import store from '../store';
 
@@ -13,6 +14,7 @@ class Header extends Component {
   render() {
     const { subMenus } = store;
     const { location, history } = this.props;
+    console.log(history, location);
     return (
       <div className={styles.container}>
         <div className={styles.history}>
@@ -40,7 +42,9 @@ class Header extends Component {
             ))
           }
         </div>
-        <div className={styles.fixedContent}>fixed content</div>
+        <div className={styles.fixedContent}>
+          <FixedContent />
+        </div>
       </div>
     );
   }

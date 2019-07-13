@@ -10,7 +10,6 @@ export default class Content extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { children } = this.props;
     return (
       <div className={styles.container}>

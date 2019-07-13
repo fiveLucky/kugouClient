@@ -8,7 +8,6 @@ import App from './App';
 import './style/index.less';
 
 const FindMusic = lazy('./views/FindMusic');
-
 export default class Router extends Component {
   render() {
     return (
