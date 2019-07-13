@@ -1,6 +1,42 @@
+@import (less) '/index';
+
 .container {
+  position: relative;
+
+  .icon {
+    color: @deep-white;
+    position: absolute;
+    left: 4px;
+    font-size: 20px;
+  }
+
+  .clearBtn {
+    color: @deep-white;
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    font-size: 20px;
+    vertical-align: middle;
+    transform: rotate(45deg)
+  }
+
+  .placeholder {
+    color: @deep-white;
+    position: absolute;
+    left: 26px;
+    font-size: 12px;
+    top: 1px;
+  }
 
   .input {
-    outline: none
+    outline: none;
+    height: 24px;
+    width: 124px;
+    background: @shallow-primary;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    padding-left: 26px;
+    color: @white;
   }
 }

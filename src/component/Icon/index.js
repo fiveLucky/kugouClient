@@ -48,6 +48,13 @@ const NAME = {
   lyric: '675',
   volume: '603',
 
+  setting: '61f',
+  search: '61e',
+  skin: '640',
+  wicket: '61c',
+  message: '61b',
+
+
 };
 export default function Icon(props) {
   const { name = 'music', className, onClick = () => { } } = props;

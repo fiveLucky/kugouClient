@@ -42,9 +42,7 @@ class Header extends Component {
             ))
           }
         </div>
-        <div className={styles.fixedContent}>
-          <FixedContent />
-        </div>
+        <FixedContent />
       </div>
     );
   }
