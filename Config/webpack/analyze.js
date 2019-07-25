@@ -1,9 +1,9 @@
-const webpack = require('./prod.js');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const webpack = require('./prod.js');
 
 webpack.plugins.push(new BundleAnalyzerPlugin({
-  analyzerPort: 8889
+  analyzerPort: 8889,
 }));
 const smp = new SpeedMeasurePlugin();
 
